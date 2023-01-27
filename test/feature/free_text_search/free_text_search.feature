@@ -15,8 +15,8 @@ Feature: Free text search
 
     Scenario: Matching songs suggestions
         Given loading songs suggestions for text <text> returns <suggestions>
-            | suggestions                                                            | text            |
-            | ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ] | "A day in life" |
+            | text            | suggestions                                                            |
+            | "A day in life" | ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ] |
         And I enter {"A day in life"}
         When I search for songs
         Then I see suggestions <suggestions>
