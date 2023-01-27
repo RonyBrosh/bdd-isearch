@@ -19,6 +19,6 @@ Feature: Free text search
             | ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ] | "A day in life" |
         And I enter {"A day in life"}
         When I search for songs
-        Then is see suggestions <suggestions>
+        Then I see suggestions <suggestions>
             | suggestions                                                            |
             | ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ] |

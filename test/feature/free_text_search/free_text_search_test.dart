@@ -13,7 +13,7 @@ import './step/i_search_for_songs.dart';
 import './step/im_informed_that_there_were_no_songs_suggestions.dart';
 import './step/songs_suggestions_for_text.dart';
 import './step/i_enter.dart';
-import './step/is_see_suggestions.dart';
+import './step/i_see_suggestions.dart';
 
 void main() {
   Future<void> bddSetUp(WidgetTester tester) async {
@@ -37,7 +37,7 @@ void main() {
       await songsSuggestionsForText(tester, ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ], "A day in life");
       await iEnter(tester, "A day in life");
       await iSearchForSongs(tester);
-      await isSeeSuggestions(tester, ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ]);
+      await iSeeSuggestions(tester, ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ]);
     });
   });
 }
