@@ -14,7 +14,7 @@ Feature: Free text search
         Then I'm informed that there were no songs suggestions
 
     Scenario: Matching songs suggestions
-        Given songs suggestions <suggestions> for text <text>
+        Given loading songs suggestions for text <text> returns <suggestions>
             | suggestions                                                            | text            |
             | ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ] | "A day in life" |
         And I enter {"A day in life"}

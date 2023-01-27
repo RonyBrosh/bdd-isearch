@@ -11,7 +11,7 @@ import './step/there_are_no_songs_suggestions_for_text.dart';
 import './step/i_enter_text.dart';
 import './step/i_search_for_songs.dart';
 import './step/im_informed_that_there_were_no_songs_suggestions.dart';
-import './step/songs_suggestions_for_text.dart';
+import './step/loading_songs_suggestions_for_text_returns.dart';
 import './step/i_enter.dart';
 import './step/i_see_suggestions.dart';
 
@@ -34,7 +34,7 @@ void main() {
     });
     testWidgets('''Matching songs suggestions''', (tester) async {
       await bddSetUp(tester);
-      await songsSuggestionsForText(tester, ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ], "A day in life");
+      await loadingSongsSuggestionsForTextReturns(tester, "A day in life", ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ]);
       await iEnter(tester, "A day in life");
       await iSearchForSongs(tester);
       await iSeeSuggestions(tester, ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ]);
