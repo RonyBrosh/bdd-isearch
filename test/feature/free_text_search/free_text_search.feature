@@ -15,10 +15,10 @@ Feature: Free text search
 
     Scenario: Matching songs suggestions
         Given songs suggestions <suggestions> for text <text>
-            | suggestions                                                                                                      | text            |
-            | ["The Beatles - A day in life" ,"The Beatles - A day in life LIVE", "The Beatles - A day in life [Bass track]" ] | "A day in life" |
+            | suggestions                                                            | text            |
+            | ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ] | "A day in life" |
         And I enter {"A day in life"}
         When I search for songs
         Then is see suggestions <suggestions>
-            | suggestions                                                                                                      |
-            | ["The Beatles - A day in life" ,"The Beatles - A day in life LIVE", "The Beatles - A day in life [Bass track]" ] |
+            | suggestions                                                            |
+            | ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ] |

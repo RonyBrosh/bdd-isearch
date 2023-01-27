@@ -34,10 +34,10 @@ void main() {
     });
     testWidgets('''Matching songs suggestions''', (tester) async {
       await bddSetUp(tester);
-      await songsSuggestionsForText(tester, ["The Beatles - A day in life" ,"The Beatles - A day in life LIVE", "The Beatles - A day in life [Bass track]" ], "A day in life");
+      await songsSuggestionsForText(tester, ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ], "A day in life");
       await iEnter(tester, "A day in life");
       await iSearchForSongs(tester);
-      await isSeeSuggestions(tester, ["The Beatles - A day in life" ,"The Beatles - A day in life LIVE", "The Beatles - A day in life [Bass track]" ]);
+      await isSeeSuggestions(tester, ["A day in life" ,"A day in life LIVE", "A day in life [Bass track]" ]);
     });
   });
 }
