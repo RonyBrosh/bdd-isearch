@@ -21,4 +21,4 @@ Feature: Free text search
         When I search for songs
         Then I see suggestions <suggestions>
             | suggestions                                                            |
-            | ["A day in life" ,"A day in life LIVE", "A day in life (Bass track)" ] |
+            | ["A day in life" ,"A day in life LIVE", "A day in life (Drums track)" ] |
