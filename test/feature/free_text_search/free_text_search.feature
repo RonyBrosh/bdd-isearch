@@ -24,7 +24,6 @@ Feature: Free text search
         And I enter text {'Day'} as search text
         When I enter text {''} as search text
         Then I can't search for songs
-        
 
     Scenario: No songs suggestions
         Given I'm on the Free Text Search page
