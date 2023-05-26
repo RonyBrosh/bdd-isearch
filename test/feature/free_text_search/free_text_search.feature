@@ -41,7 +41,6 @@ Feature: Free text search
             | 'Day in'  | ['A Day In The Life']                                         |
             | 'Beatles' | ['A Day In The Life', 'Things We Said Today']                 |
 
-
     Scenario: No internet connection
         Given I'm on the Free Text Search page
         And I enter text {'Night'} as search text
