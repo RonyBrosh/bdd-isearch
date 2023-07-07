@@ -5,7 +5,7 @@ Feature: Free text search
   Background:
     Given song <song> by artist <artist> is in the catalog
       | song                   | artist            |
-      | 'A Day In The Life'    | 'Guns and roses'  |
+      | 'A Day In The Life'    | 'Beatles'  |
       | 'Things We Said Today' | 'Beatles'         |
       | 'Day Dreaming'         | 'Aretha Franklin' |
 
