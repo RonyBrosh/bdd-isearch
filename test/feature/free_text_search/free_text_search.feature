@@ -1,11 +1,11 @@
 Feature: Free text search
 
-  'Catalog' refers to all available songs in our system.
+  'Catalogue' refers to all available songs in our system.
 
   Background:
-    Given song <song> by artist <artist> is in the catalog
+    Given song <song> by artist <artist> is in the catalogue
       | song                   | artist            |
-      | 'A Day In The Life'    | 'Beatles'  |
+      | 'A Day In The Life'    | 'Beatles'         |
       | 'Things We Said Today' | 'Beatles'         |
       | 'Day Dreaming'         | 'Aretha Franklin' |
 
