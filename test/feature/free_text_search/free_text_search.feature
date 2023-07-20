@@ -2,6 +2,9 @@ Feature: Free text search
 
   'Catalogue' refers to all available songs in our system.
 
+  Background:
+    Given the app is running
+
   Scenario: Landing on the free text page
     Given I'm on the Free Text Search page
     Then the text search is empty

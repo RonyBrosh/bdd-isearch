@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bdd_isearch/feature/free_text/domain/model/song.dart';
 import 'package:bdd_isearch/feature/free_text/domain/use_case/get_songs_use_case.dart';
+import 'package:bdd_isearch/feature/free_text/presentation/generic_error_widget.dart';
 import 'package:bdd_isearch/feature/free_text/presentation/no_results_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -57,12 +58,22 @@ class _FreeTextSearchPageState extends State<FreeTextSearchPage> {
         searchText: _searchText,
       );
       setState(() {
-        _songs = songs;
+        _songs.clear();
+        _songs.addAll(songs);
       });
     } on Exception catch (_) {
       _showError();
     }
   }
 
-  void _showError() {}
+  void _showError() {
+    unawaited(
+      showDialog(
+        context: context,
+        builder: (_) {
+          return const GenericErrorWidget();
+        },
+      ),
+    );
+  }
 }

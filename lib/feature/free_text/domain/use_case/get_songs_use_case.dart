@@ -8,6 +8,13 @@ class GetSongsUseCase {
 
   final SongsRepository _songsRepository;
 
-  Future<List<Song>> call({required String searchText}) =>
-      _songsRepository.getSongs(searchText: searchText);
+  Future<List<Song>> call({required String searchText}) async {
+    final songs = await _songsRepository.getSongs();
+    return List.unmodifiable(songs.where((song) {
+      final title = song.title.toLowerCase();
+      final artist = song.artist.toLowerCase();
+      final query = searchText.toLowerCase();
+      return title.contains(query) || artist.contains(query);
+    }));
+  }
 }

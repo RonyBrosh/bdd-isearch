@@ -8,6 +8,5 @@ class SongsRepository {
 
   final SongsApi _songsApi;
 
-  Future<List<Song>> getSongs({required String searchText}) =>
-      _songsApi.getSongs(searchText: searchText);
+  Future<List<Song>> getSongs() => _songsApi.getSongs();
 }

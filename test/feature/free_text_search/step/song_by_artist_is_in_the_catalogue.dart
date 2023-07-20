@@ -5,21 +5,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mocked_backend/mocked_backend.dart';
 
-List<Song> _catalogue = [];
+import '../util/free_text_test_data.dart';
 
 Future<void> songByArtistIsInTheCatalogue(
   WidgetTester tester,
   String song,
   String artist,
 ) async {
-  if (GetIt.instance.isRegistered<MockedBackendInterceptor>()) {
-    GetIt.instance.unregister<MockedBackendInterceptor>();
-  }
+  FreeTextTestData.instance.addSong(Song(title: song, artist: artist));
+  var response = jsonEncode(FreeTextTestData.instance
+      .getSongs()
+      .map((song) => song.toJson())
+      .toList());
 
-  _catalogue.add(Song(title: song, artist: artist));
-  var response = jsonEncode(_catalogue.map((song) => song.toJson()).toList());
-
-  final mockedBackendInterceptor = MockedBackendInterceptor();
+  final mockedBackendInterceptor = GetIt.instance<MockedBackendInterceptor>();
   mockedBackendInterceptor.mockScenario(
     Scenario(
       [

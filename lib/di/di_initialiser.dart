@@ -5,7 +5,10 @@ import 'package:injectable/injectable.dart';
 import 'di_initialiser.config.dart';
 
 @injectableInit
-void configureDependencies() => GetIt.instance.init();
+Future<void> configureDependencies() async {
+  await GetIt.instance.reset();
+  GetIt.instance.init();
+}
 
 @module
 abstract class DioModule {

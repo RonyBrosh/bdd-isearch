@@ -19,9 +19,9 @@ class _SongsApi implements SongsApi {
   String? baseUrl;
 
   @override
-  Future<List<Song>> getSongs({required String searchText}) async {
+  Future<List<Song>> getSongs() async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'query': searchText};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result =

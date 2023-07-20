@@ -12,7 +12,5 @@ abstract class SongsApi {
   factory SongsApi(Dio dio) = _SongsApi;
 
   @GET("/catalogue")
-  Future<List<Song>> getSongs({
-    @Query("query") required String searchText,
-  });
+  Future<List<Song>> getSongs();
 }
