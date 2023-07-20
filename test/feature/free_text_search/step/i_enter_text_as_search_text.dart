@@ -5,6 +5,6 @@ Future<void> iEnterTextAsSearchText(
   WidgetTester tester,
   String text,
 ) async {
-  await tester.enterText(find.byType(SearchBar), text);
+  await tester.enterText(find.byKey(const Key('_search_bar_')), text);
   await tester.pumpAndSettle();
 }
