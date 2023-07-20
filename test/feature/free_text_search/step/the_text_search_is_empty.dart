@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 Future<void> theTextSearchIsEmpty(WidgetTester tester) async {
-  throw UnimplementedError();
+  await tester.enterText(find.byType(SearchBar), '');
+  await tester.pumpAndSettle();
 }
