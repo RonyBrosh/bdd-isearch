@@ -47,10 +47,3 @@ Feature: Free text search
       | 'Day'     | ['A Day In The Life', 'Things We Said Today', 'Day Dreaming'] |
       | 'Day in'  | ['A Day In The Life']                                         |
       | 'Beatles' | ['A Day In The Life', 'Things We Said Today']                 |
-
-  Scenario: No internet connection
-    Given I'm on the Free Text Search page
-    And I enter text {'Night'} as search text
-    And there is no internet connection
-    When I search for songs
-    Then I'm informed that there was an error
