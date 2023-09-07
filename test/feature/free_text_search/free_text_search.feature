@@ -7,7 +7,7 @@ Feature: Free text search
 
   Scenario: Landing on the free text page
     Given I'm on the Free Text Search page
-    Then the text search is empty
+    Then the voice search is empty
     And I can't search for songs
 
   Scenario: Filled search text
