@@ -27,6 +27,7 @@ Feature: Free text search
       | 'A Day In The Life'    | 'Beatles'         |
       | 'Things We Said Today' | 'Beatles'         |
       | 'Day Dreaming'         | 'Aretha Franklin' |
+      | 'Rock n' Roll'         | 'Elvis Presly'    |
     And I'm on the Free Text Search page
     And I enter text {'Night'} as search text
     When I search for songs
