@@ -6,12 +6,13 @@ part of 'song.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Song _$$_SongFromJson(Map<String, dynamic> json) => _$_Song(
+_$SongImpl _$$SongImplFromJson(Map<String, dynamic> json) => _$SongImpl(
       title: json['title'] as String,
       artist: json['artist'] as String,
     );
 
-Map<String, dynamic> _$$_SongToJson(_$_Song instance) => <String, dynamic>{
+Map<String, dynamic> _$$SongImplToJson(_$SongImpl instance) =>
+    <String, dynamic>{
       'title': instance.title,
       'artist': instance.artist,
     };

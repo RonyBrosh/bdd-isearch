@@ -1,20 +1,21 @@
 import 'dart:convert';
 
 import 'package:bdd_isearch/feature/free_text/domain/model/song.dart';
+import 'package:bdd_widget_test/data_table.dart' as bdd;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mocked_backend/mocked_backend.dart';
 
-import '../util/free_text_test_data.dart';
+/// Usage: songs in the catalogue
+Future<void> songsInTheCatalogue(
+    WidgetTester tester, bdd.DataTable dataTable) async {
+  final songs = dataTable
+      .asMaps()
+      .map((element) => Song(title: element['song'], artist: element['artist']))
+      .toList();
 
-Future<void> songByArtistIsInTheCatalogue(
-  WidgetTester tester,
-  String song,
-  String artist,
-) async {
-  FreeTextTestData.instance.addSong(Song(title: song, artist: artist));
-  var response = jsonEncode(FreeTextTestData.instance
-      .getSongs()
+  var response = jsonEncode(
+      songs
       .map((song) => song.toJson())
       .toList());
 

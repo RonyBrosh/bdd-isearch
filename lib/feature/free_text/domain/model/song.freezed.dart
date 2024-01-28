@@ -66,18 +66,20 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
 }
 
 /// @nodoc
-abstract class _$$_SongCopyWith<$Res> implements $SongCopyWith<$Res> {
-  factory _$$_SongCopyWith(_$_Song value, $Res Function(_$_Song) then) =
-      __$$_SongCopyWithImpl<$Res>;
+abstract class _$$SongImplCopyWith<$Res> implements $SongCopyWith<$Res> {
+  factory _$$SongImplCopyWith(
+          _$SongImpl value, $Res Function(_$SongImpl) then) =
+      __$$SongImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title, String artist});
 }
 
 /// @nodoc
-class __$$_SongCopyWithImpl<$Res> extends _$SongCopyWithImpl<$Res, _$_Song>
-    implements _$$_SongCopyWith<$Res> {
-  __$$_SongCopyWithImpl(_$_Song _value, $Res Function(_$_Song) _then)
+class __$$SongImplCopyWithImpl<$Res>
+    extends _$SongCopyWithImpl<$Res, _$SongImpl>
+    implements _$$SongImplCopyWith<$Res> {
+  __$$SongImplCopyWithImpl(_$SongImpl _value, $Res Function(_$SongImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +88,7 @@ class __$$_SongCopyWithImpl<$Res> extends _$SongCopyWithImpl<$Res, _$_Song>
     Object? title = null,
     Object? artist = null,
   }) {
-    return _then(_$_Song(
+    return _then(_$SongImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -101,10 +103,11 @@ class __$$_SongCopyWithImpl<$Res> extends _$SongCopyWithImpl<$Res, _$_Song>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Song implements _Song {
-  const _$_Song({required this.title, required this.artist});
+class _$SongImpl implements _Song {
+  const _$SongImpl({required this.title, required this.artist});
 
-  factory _$_Song.fromJson(Map<String, dynamic> json) => _$$_SongFromJson(json);
+  factory _$SongImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SongImplFromJson(json);
 
   @override
   final String title;
@@ -117,10 +120,10 @@ class _$_Song implements _Song {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Song &&
+            other is _$SongImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.artist, artist) || other.artist == artist));
   }
@@ -132,12 +135,12 @@ class _$_Song implements _Song {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SongCopyWith<_$_Song> get copyWith =>
-      __$$_SongCopyWithImpl<_$_Song>(this, _$identity);
+  _$$SongImplCopyWith<_$SongImpl> get copyWith =>
+      __$$SongImplCopyWithImpl<_$SongImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SongToJson(
+    return _$$SongImplToJson(
       this,
     );
   }
@@ -145,9 +148,9 @@ class _$_Song implements _Song {
 
 abstract class _Song implements Song {
   const factory _Song(
-      {required final String title, required final String artist}) = _$_Song;
+      {required final String title, required final String artist}) = _$SongImpl;
 
-  factory _Song.fromJson(Map<String, dynamic> json) = _$_Song.fromJson;
+  factory _Song.fromJson(Map<String, dynamic> json) = _$SongImpl.fromJson;
 
   @override
   String get title;
@@ -155,5 +158,6 @@ abstract class _Song implements Song {
   String get artist;
   @override
   @JsonKey(ignore: true)
-  _$$_SongCopyWith<_$_Song> get copyWith => throw _privateConstructorUsedError;
+  _$$SongImplCopyWith<_$SongImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
